@@ -5,7 +5,7 @@
       <div class="container">
         <div class="nav-left">
           <router-link to="/" class="nav-item">
-            Shopping Cart App
+            Vuejs & Laravel
           </router-link>
         </div>
         <span class="nav-toggle">
@@ -25,5 +25,5 @@
     </header>
   </div>
 
-  
+
 </section>

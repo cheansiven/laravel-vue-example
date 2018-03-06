@@ -24,6 +24,6 @@ Route::get('/api/mobiles', function() {
     return Ware::where('type','mobile')->get();
 });
 
-Route::get('/api/tablets', function() {
-    return Ware::where('type','tablet')->get();
+Route::get('/api/accessories', function() {
+    return Ware::where('type','accessorie')->get();
 });

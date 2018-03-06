@@ -2,7 +2,7 @@
   <div class="container">
     <div class="content has-text-centered">
       <p>
-        <strong>Shopping Cart</strong> by <a href="http://jgthms.com">Dimashqi</a>
+        <strong>Vue.js & Laravel Example</a>
       </p>
     </div>
   </div>

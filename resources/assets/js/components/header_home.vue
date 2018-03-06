@@ -1,14 +1,10 @@
 <template>
 <section class="hero is-success">
-      <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container has-text-centered">
           <h1 class="title">
-            Shopping Page 
+            Vue Router
           </h1>
-          <h2 class="subtitle">
-            Shopping is more comfortable here ;-)
-          </h2>
         </div>
       </div>
 
@@ -23,8 +19,8 @@
             <router-link tag="li" to="mobile">
               <a>Mobiles</a>
             </router-link>
-           <router-link tag="li" to="tab">
-              <a>Tablets</a>
+           <router-link tag="li" to="accessories">
+              <a>Accessories</a>
             </router-link>
             </ul>
           </div>
@@ -35,6 +31,6 @@
 
 <script>
     export default {
-        
+
     }
 </script>

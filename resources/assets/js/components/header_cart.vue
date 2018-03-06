@@ -5,9 +5,6 @@
 	      <h1 class="title">
 	        My Cart
 	      </h1>
-	      <h2 class="subtitle">
-	        Here what did you select! 
-	      </h2>
 	    </div>
 	  </div>
 	</section>
@@ -16,6 +13,6 @@
 
 <script>
 	export default{
-		
+
 	}
 </script>

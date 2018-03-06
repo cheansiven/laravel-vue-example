@@ -22,9 +22,9 @@ let routes = [
 				component: require('./views/home/mobile.vue')
 			},
 			{
-				path: 'tab',
-				name : 'tab',
-				component: require('./views/home/tab.vue')
+				path: 'accessories',
+				name : 'accessories',
+				component: require('./views/home/accessories.vue')
 			}
 		]
 	},

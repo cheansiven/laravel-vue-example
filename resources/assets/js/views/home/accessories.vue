@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Laptop Zone</h2>
+		<h2>Accessories</h2>
 		<table class="table">
 	  <thead>
 	    <tr>
@@ -12,17 +12,17 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr v-for="laptop in laptops">
-	      <th>{{ laptop.name }}</th>
-	      <th>{{ laptop.type }}</th>
-	      <th>{{ laptop.price }}</th>
+	    <tr v-for="tablet in tablets">
+	      <th>{{ tablet.name }}</th>
+	      <th>{{ tablet.type }}</th>
+	      <th>{{ tablet.price }}</th>
 	      <th>
-	      	<p v-if="count[laptop.id]">{{ count[laptop.id] }}</p>
-	      	<p v-else>{{ get_cnt(laptop.id) }}</p>
+	      	<p v-if="count[tablet.id]">{{ count[tablet.id] }}</p>
+	      	<p v-else>{{ get_cnt(tablet.id) }}</p>
 	      </th>
 	      <th>
-	      		<a class="button is-success" @click="add(laptop)">add</a>
-				<a class="button is-warning" @click="remove(laptop.id)">remove</a>
+	      		<a class="button is-success" @click="add(tablet)">add</a>
+				<a class="button is-warning" @click="remove(tablet.id)">remove</a>
 			</th>
 	    </tr>
 	</tbody>
@@ -38,14 +38,16 @@
 	export default{
 		data(){
 			return{
-				laptops : [],
+				tablets : [],
 				selected : [],
 				count : {}
 			}
 		},
-		created(){
-			axios.get('/api/laptops').then(({data}) => this.laptops = data);
-			this.selected = store.getters.getItems;
+		mounted(){
+			axios.get('/api/accessories').then(({data}) => {
+				this.tablets = data;
+				this.selected = store.getters.getItems;
+			});
 		},
 		methods:{
 			add(item){
@@ -60,12 +62,10 @@
 					Vue.set(this.count, itemID, 0);
 			},
 			get_cnt(itemID){
-				if(this.selected[itemID]){
+				if(this.selected[itemID])
 					return this.selected[itemID].count;
-				}
-				else{
+				else
 					return 0;
-				}
 			}
 		}
 	}

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Tablets Zone</h2>
+		<h2>Mobile Products</h2>
 		<table class="table">
 	  <thead>
 	    <tr>
@@ -12,17 +12,17 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    <tr v-for="tablet in tablets">
-	      <th>{{ tablet.name }}</th>
-	      <th>{{ tablet.type }}</th>
-	      <th>{{ tablet.price }}</th>
+	    <tr v-for="mobile in mobiles">
+	      <th>{{ mobile.name }}</th>
+	      <th>{{ mobile.type }}</th>
+	      <th>{{ mobile.price }}</th>
 	      <th>
-	      	<p v-if="count[tablet.id]">{{ count[tablet.id] }}</p>
-	      	<p v-else>{{ get_cnt(tablet.id) }}</p>
+	      	<p v-if="count[mobile.id]">{{ count[mobile.id] }}</p>
+	      	<p v-else>{{ get_cnt(mobile.id) }}</p>
 	      </th>
 	      <th>
-	      		<a class="button is-success" @click="add(tablet)">add</a>
-				<a class="button is-warning" @click="remove(tablet.id)">remove</a>
+	      		<a class="button is-success" @click="add(mobile)">add</a>
+				<a class="button is-warning" @click="remove(mobile.id)">remove</a>
 			</th>
 	    </tr>
 	</tbody>
@@ -38,16 +38,14 @@
 	export default{
 		data(){
 			return{
-				tablets : [],
+				mobiles : [],
 				selected : [],
 				count : {}
 			}
 		},
-		mounted(){
-			axios.get('/api/tablets').then(({data}) => {
-				this.tablets = data;
-				this.selected = store.getters.getItems;
-			});
+		created(){
+			axios.get('/api/mobiles').then(({data}) => this.mobiles = data);
+			this.selected = store.getters.getItems;
 		},
 		methods:{
 			add(item){
